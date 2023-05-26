@@ -1,0 +1,665 @@
+<!doctype html>
+<html>
+<head>
+    <title>꾸꾸의 학습기록 - 예습</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="colors.js"></script>
+</head>
+<body>
+    <h1><a href="index.html">꾸꾸의 학습기록</a></h1>
+    <div id="grid">
+    <div id="index">
+       <ol>
+        <li><a href="1.html">HTML 1</a></li>
+        <li><a href="2.html">HTML 2</a></li>
+        <li><a href="3.html">HTML 3</a></li>
+        <li><a href="4.html">HTML 4</a></li>
+        <li><a href="5.html">HTML 5</a></li>
+        <li><a href="6.html">HTML 6</a></li>
+        <li><a href="css1.html">CSS 1</a></li>
+        <li><a href="css2.html">CSS 2</a></li>
+        <li><a href="css3.html">CSS 3</a></li>
+        <li><a href="css4.html">CSS 4</a></li>
+        <li><a href="css5.html">CSS 5</a></li>
+        <li><a href="js1.html">JS 1</a></li>
+        <li><a href="js2.html">JS 2</a></li>
+        <li><a href="js3.html">JS 3</a></li>
+        <li><a href="js4.html">JS 4</a></li>
+        <li><a href="js5.html">JS 5</a></li>
+        <li><a href="js6.html">JS 5</a></li>
+        <li><a href="js7.html">JS 5</a></li>
+
+    </ol>
+   </div>
+<div id="article">
+<h2>'생활코딩' 학습기록: JS 3</h2>
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body') 
+ if(this.value === 'night'){
+                        target.style.backgroundColor = 'black';
+                        target.style.color = 'white';
+                        this.value = 'day';
+
+                    var alist = document.querySelectorAll('a');
+                    var i = 0;
+                    while(i < alist.length){
+                        alist[i].style.color = 'powderblue';
+                        i = i + 1;
+                    }
+                } else {
+                    target.style.backgroundColor = 'white';
+                    target.style.color = 'black';
+                    this.value = 'night';
+
+                    var alist = document.querySelectorAll('a');
+                    var i = 0;
+                    while(i < alist.length){
+                        alist[i].style.color = 'blue';
+                        i = i + 1;
+                    }
+                    }">
+<hr>
+<br>
+<h3>19. 반복문 예고</h3>
+<p>
+    이번 시간에는 js의 새로운 문법을 배우기 위해서 예제에서 불만족 요소를 찾아내보자
+    night 버튼을 클릭하면 불만족스럽다. 저 링크가 너무 어둡다. 하지만 밝은 색으로 갔을 때는 선명하게 잘 보인다
+    즉, 이 버튼을 누를 때마다 어두운 경우에는 좀 밝게, 밝은 경우에는 좀 어두운 컬러로 저 링크가 표현되었으면 좋겠다
+    그러면 쟤가 클릭되었을 때, 저 웹페이지에 있는 모든 링크를 스타일 속성값을 밝게 바꿔주는 그런 코딩을 하면 된다
+    만약 링크가 1억개라고 해보자. 그러면 1억번의 반복적인 작업을 해야할 것이다. 그러면 유지보수도 매우 힘들다
+    이런 절망적인 상황에서 우리를 구원해주는 기능이 바로 반복문이다 이번 시간에는 반복문을 하기 위한 오리엔테이션 시간이다
+    반복문을 하기 위해서 필요한 것을 다음으로 살펴보자
+    </p>
+    <p>
+실제 반복문 코드를 가져와봤다. 이 코드가 잘 실행되고 있는지는 element 창에서 night 버튼을 누를 때 a 태그에 style 값이 어떻게 변화하는지를 보면 된다. (원래 없던 style 속성이 누르면 생겨나면서 바뀐다)
+대략적인 내용을 밝히면, 이 웹페이지에 있는 모든 a태그를 가져온 다음에, 그 a태그 하나하나에 대해서 반복적으로 파우더 블루 컬러를 지정한다는 내용이 들어있는 코드이다
+이 코드를 이해하기 위해서 필요한 부품들을 다음 시간에 살펴볼 것이다
+다음시간부터 우리가 살펴볼 js의 기능은 첫번째는 '배열'을 배울 것이고, 두번째는 
+    </p>
+</p>
+<hr>
+<br>
+<h3>20. 배열</h3>
+<p>
+지금부터 배열이라는 주제의 이야기를 시작하겠다
+배열은, 이전에 코딩 프로그래밍을 처음 시작했을 때를 생각해보면, 처음 도전했을 때는 실패했다
+실패한 곳이 배열이다. 그 이유는 이게 도대체 왜 필요한가였던 것 같다
+배열이 왜 필요한지는 배열 자체로는 알기가 힘들다. 이 수업 다음 수업인 '반복문'에서 배열이 왜 필요한지 알 수 있을 것이다
+반복문을 이용해서 웹 애플리케이션을 만드는 과정을 보게 되는 그 이후에, 조금 더 실용적인 예제가 나올테니 참아보자
+이번 시간에는 조금 관념적인 이야기를 할 것이다
+</p>
+<p>
+    비유로 출발해보자. 집에 시간이 지날수록 살림이 늘어난다
+    살림이 늘어나면 마음이 힘들어지고, 뭘 사게 되나? 책장이나 또는 수납상자나, 
+    집을 늘릴 수도 있을 것이다. 방이 여러 개 있는 집으로.
+    이런 식으로 집에 있는 사물이 많아질수록 그 사물들을 잘 정리정돈할 필요성이 생기고, 그 필요성에 따라가면서
+    정리정돈할 수 있는 여러 수납공간을 마련하게 된다. 코딩 또는 프로그래밍도 마찬가지이다
+    프로그래밍을 하게 되면 굉장히 많은 데이터를 다루게 된다
+    그 데이터들은 제각기 성격들이 다르다
+    데이터들이 많아짐에 따라 그냥 코딩을 하는 것에 따라서는 너무 복잡해서 
+    인간의 한계에 도달하면서, 프로그램을 더 복잡하게 하지 못하는 순간에 도달한다
+    사람이 감당할 수 없을만큼 복잡해진 소프트웨어는 사람이 감당할 수 없는 소프트웨어가 된 것이다
+    </p>
+    <p>
+        그러면 어떻게 해야 하나. 집으로 돌아오면 우리는 수납상자를 통해서
+        음식들을, 사물들을, 수납상자나 냉장고 같은 곳에 넣고, 
+        그다음부터는 수납상자 하나만 생각하면 된다. 냉장고 하나만 생각하거나. 즉
+        우리 머릿속에 다시 단순해지는 효과를 갖게 된다
+            </p>
+    <p>
+        배열도 일단 마찬가지의 느낌으로 상상해보자
+        데이터가 많아짐에 따라 많은 데이터를 그냥 둘 수 없기 때문에 데이터 중에 서로 연관된 데이터를 잘 정리정돈해서 담아두는 일종의 수납상자, 그것이 바로 배열, 영어로는 array
+        라고 생각하자. 이번 시간에는 배열의 문법을 살펴볼 것이고, 여러 성격들을 살펴볼 것이다(실용적인 얘기는 나오지 않는다)
+            </p>
+    <p>
+        <pre><code>
+            &lt;!doctype html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;meta charset="utf-8"&gt;
+                &lt;title&gt;&lt;/title&gt;
+                &lt;body&gt;
+                &lt;h1&gt;Array&lt;/h1&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+            </code></pre>
+    첫번째로 살펴볼 것은 배열의 방법이다
+    (syntax는 문법이라는 뜻이다) script 태그로 문법을 적어보자
+    <pre><code>
+        &lt;!doctype html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+            &lt;title&gt;&lt;/title&gt;
+            &lt;body&gt;
+            &lt;h1&gt;Array&lt;/h1&gt;
+            &lt;h2&gt;Syntax&lt;/h2&gt;
+                &lt;script&gt;
+                    ["egoing", "leezche"];
+                &lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+        문자는 어떤 기호로 끝나서 어떻게 끝나나? 큰따옴표이다. 배열은 []로 끝낸다
+        이 안에다 값들을 적는데, 여러 개의 값들을 적을 수 있다
+        그리고 값과 값 사이는 이렇게 ,로 구분한다. 그러면 이렇게 배열을 만든 다음에
+        이 상태로는 쓰기가 불편하다
+        그래서 이 배열을 변수에 담을 것이다
+        <pre><code>
+            &lt;!doctype html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;meta charset="utf-8"&gt;
+                &lt;title&gt;&lt;/title&gt;
+                &lt;body&gt;
+                &lt;h1&gt;Array&lt;/h1&gt;
+                &lt;h2&gt;Syntax&lt;/h2&gt;
+                    &lt;script&gt;
+                       var coworkers = ["egoing", "leezche"];
+                    &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+            </code></pre>
+    coworkers라는 변수에, 배열이라고 하는 새로운 데이터타입이 담긴 것이다
+    그 데이터타입에 coworkers라는 이름을 붙였다고도 할 수 있겠다(변수를 썼다는 것은)
+    이건 새로운 수납상자를 가져다놓으면서 거기에 물건을 두 개 담은 것과 똑같다
+    </p>
+    <p>
+        그러면, 배열을 만드는 것을 해봤으니, 이번에는 꺼내보자(만들었으면, 꺼낼 줄도 알아야 한다)
+        배열을 가져오는 방법을 살펴보자
+        <pre><code>
+            &lt;!doctype html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;meta charset="utf-8"&gt;
+                &lt;title&gt;&lt;/title&gt;
+                &lt;body&gt;
+                &lt;h1&gt;Array&lt;/h1&gt;
+                &lt;h2&gt;Syntax&lt;/h2&gt;
+                    &lt;script&gt;
+                       var coworkers = ["egoing", "leezche"];
+                    &lt;/script&gt;
+                &lt;h2&gt;get&lt;/h2&gt;
+                &lt;script&gt;
+                    document.write(coworkers[0]);
+                &lt;/script&gt;
+                    
+            &lt;/body&gt;
+            &lt;/html&gt;
+            </code></pre>
+        꺼내오고 싶으면, 이렇게 하면 되는데, 이것의 출력값은 'egoing'이다.
+        즉, 첫번째 자리에 있는 값은 0번째라는 뜻이다. (이것을 index라고 한다)
+        그러면 index 1번은 leezche가 된다. 
+    </p>
+    <p>
+        또 하나 핵심적인 것을 배워보자. 들어있는 값이 몇 개인가를 체크하는 것이다
+        검색을 통해 이것을 알아낼 수 있다 (검색어: JavaScript array count) 
+        검색 결과가 배열을 만들고 거기서 .length;를 하면 몇 개의 값이 있는가를 알려주는 것 같다
+        이런 것을 참고해서 만들어보자
+        <pre><code>
+                &lt;body&gt;
+                &lt;h1&gt;Array&lt;/h1&gt;
+                &lt;h2&gt;Syntax&lt;/h2&gt;
+                    &lt;script&gt;
+                       var coworkers = ["egoing", "leezche"];
+                    &lt;/script&gt;
+                &lt;h2&gt;get&lt;/h2&gt;
+                    &lt;script&gt;
+                        document.write(coworkers[0]);
+                    &lt;/script&gt;
+                &lt;h2&gt;count&lt;/h2&gt;
+                    &lt;script&gt;
+                        document.write(coworkers.length);
+                    &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+            </code></pre>
+        헷갈리지 말아야 할 점이 여기에 있다. 우리가 index를 정할 때는 0은 첫번째고, 1은 두번쨰가 된다
+        그러나 개수는 1부터 쓰기 때문에 값이 두개라면 length의 값은 2가 된다
+    </p>
+    <p>
+        데이터를 추가하는 방법도 살펴보자. 만약 데이터를 추가하고 싶다. 그러면 검색을 통해 알아보자
+        (검색어: JavaScript array add data)
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Array&lt;/h1&gt;
+            &lt;h2&gt;Syntax&lt;/h2&gt;
+                &lt;script&gt;
+                   var coworkers = ["egoing", "leezche"];
+                &lt;/script&gt;
+
+            &lt;h2&gt;get&lt;/h2&gt;
+                &lt;script&gt;
+                    document.write(coworkers[0]);
+                &lt;/script&gt;
+
+            &lt;h2&gt;add&lt;/h2&gt;
+                &lt;script&gt;
+                    coworkers.push('duru');
+                    coworkers.push('taeho');
+                &lt;/script&gt;
+ 
+            &lt;h2&gt;count&lt;/h2&gt;
+                &lt;script&gt;
+                    document.write(coworkers.length);
+                &lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+        이렇게 실행시키면, length는 4개의 값이 들어있기 때문에 숫자 4가 카운팅된다
+        배열은 push나 여러 가지 명령어가 있다. push는 데이터를 끝에 추가하는 것이었고, 데이터를 앞쪽에 추가하고 싶거나 
+        데이터를 지우고 싶거나 중간에 낑겨넣고 싶거나, 여러 필요성이 있다. 
+        바로 그런 필요성들을 다 처음부터 외울 필요는 없다. 검색할 수만 있으면 된다
+        (검색어: JavaScript array) 이 정도만 검색해도 여러 가지 기능을 이용해서 배열이라고 하는 수납상자에 데이터를 넣고,
+        빼고, 몇 개가 있는지를 알아내고, 그것을 가지고 작업을 처리하고 하는 것에 대한 정교한 기능들이 마련되어있기 때문에 어떤 기능들이 있는지
+        대충 쓱 눈으로 봐도 좋고, 나중에 코딩을 하면서 복잡한 상황에 맞닥뜨리게 되면, 자연스럽게 배열을 좀 더 복잡하게, 풍부하게 활용할 필요성을 느끼게 되는데, 검색을 통해 공부하면 된다
+        미리 처음부터 이 모든 것을 우겨넣을 필요는 없다
+    </p>
+    <p>
+        배열은 이거 자체로는 어떤 것에 쓰이는지 모른다. 다음 시간에 환상의 콤비인 '반복문'을 보면서 배열의 의미에 대해서 생각해보자
+    </p>
+    <hr>
+    <br>
+    <h3>21. 반복문</h3>
+    <p> 
+        반복문의 예제를 보면서 반복문의 문법을 살펴보겠다 반복문은 영어로 Loop라고 부른다
+        write를 쓰기 전에, 여기에 리스트를 만들 것이다
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop&lt;/h1&gt;
+                &lt;ul&gt;
+                &lt;script&gt;
+                    document.write('&it;li&gt;1&it;/li&gt;'); 
+                    document.write('&it;li&gt;2&it;/li&gt;'); 
+                    document.write('&it;li&gt;3&it;/li&gt;'); 
+                    document.write('&it;li&gt;4&it;/li&gt;');   
+                &lt;/script&gt;
+                &lt;/ul&gt;
+            &lt;/body&gt;
+        </code></pre>
+        이걸 한 이유는 순서대로 실행되는 어떤 기능들 하나하나라고 생각해주자. 1번째, 2번째, 3번째, 4번째 기능이 있다고 했을 때, 실행해보자
+        결과를 보면, 마치 ul과 li를 쓴 것처럼 숫자가 하나씩 한줄에 적혀있다
+    </p>
+    <p>
+        이렇게 순서대로 실행되는 것이 프로그램의 기본적인 실행순서이다
+        그런데, 어떤 경우에는 필요에 따라 저기에 있는 2번째와 3번째 실행되어야 하는 명령을, 여러 번 반복해서 실행해야 할 때가 있다
+        그런 경우에 우리가 할 수 있는 기본적인 방법은 반복적으로 코드를 짜는 것이다
+        이렇게 하면 문제는 만약 이 반복해야 할 2줄의 프로그램 코드가 1억개라면? 반복적으로 copy & paste하는 것이 불가능할 것이다
+        그렇게 그렇게 해서 힘들게 만들어놨더니 이 내용에서 버그가 있거나 수정사항이 있다면 1억개를 다 바꿔야 하는 절망적인 상황에 놓이게 된다
+        바로 그러한 상황에서 충분히 절망하고 있는 우리에게, 반복문이 나타난다면 반복문을 배우는 것따위의 어려움은 전혀 어렵지 않을 것이다
+        반복문을 통해서 무엇을 할 수 있는지, 반복문이 없었을 때 얼마나 절망스러울 수 있는지 경험하지 못한 상태에서는 반복문이 어려울 것이다
+        상상력을 통해서 공부할 심적인 마음을 잘 만들어주자
+    </p>
+    <p>
+        두번째와 세번째 코드만 세 번 반복하도록 하자 그러기 위해서 반복문의 기본문법 while을 쓸 것이다
+        (이것 외에 for문 같은 것이 있는데, while만 다룰 것이다)
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop&lt;/h1&gt;
+                &lt;ul&gt;
+                &lt;script&gt;
+                    document.write('&it;li&gt;1&it;/li&gt;'); 
+                    while(true) {
+                    document.write('&it;li&gt;2&it;/li&gt;'); 
+                    document.write('&it;li&gt;3&it;/li&gt;'); 
+                    }
+                    document.write('&it;li&gt;4&it;/li&gt;');   
+                &lt;/script&gt;
+                &lt;/ul&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+        while의 뒤를 보면 if문과 생긴 것이 비슷하다. if 뒤의 괄호에는 무엇이 들어갔는지 기억하는가? true나 false가 들어갔다
+        boolean 데이터타입이 들어간다. 여기도 마찬가지이다. 
+        저기는 둘 중의 하나만 들어갈 수 있고, 안쪽이 true인 동안은 중괄호 안에 있는 내용이 반복적으로 실행된다(언제까지? 괄호 안의 내용이 false가 될 때까지)
+    </p>
+    <p>
+        반복적으로 실행되는 순서는 이렇다. 
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop&lt;/h1&gt;
+                &lt;ul&gt;
+                &lt;script&gt;
+                    document.write('&it;li&gt;1&it;/li&gt;'); 
+                    while(true) {
+                    document.write('&it;li&gt;2&it;/li&gt;'); 
+                    document.write('&it;li&gt;3&it;/li&gt;'); 
+                    }
+                    document.write('&it;li&gt;4&it;/li&gt;');   
+                &lt;/script&gt;
+                &lt;/ul&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+        괄호 안에 true가 있을 때, javascript는 while문이 실행되면 괄호 안을 제일 먼저 본다
+        그리고 true면 중괄호 안에 있는 것을 하나하나 실행시켜서, 중괄호 안의 마지막까지 가면, 다시 이 값이 true인지, false인지 확인한다
+        이걸 반복하고, 괄호 안쪽이 false인 것을 확인하면 그제서야 중괄호 밖의 아래에 마저 남은 것을 실행시킨다
+        즉, 반복문은 순서대로 실행되는 프로그램의 실행순서의 흐름을 제어하는 제어문이라고 할 수 있다(if문, 조건문과 함께)
+        이렇게 실행시키면 웹브라우저가 컴퓨터 자원을 다 가져가버릴 것이다. 왜냐하면 무한히 반복되기 떄문에
+        그래서 반복문은 반복문을 언제 종료할 것인가를 잘 지정해주어야 한다
+    </p>        
+    <p>
+        이 두 줄의 코드가 3번 반복되게 실행시키고 싶다. 그러려면 이 두줄의 코드가 몇 번 실행되었는지를 어딘가에 적어놓을 필요가 있다
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop&lt;/h1&gt;
+                &lt;ul&gt;
+                &lt;script&gt;
+                    document.write('&it;li&gt;1&it;/li&gt;'); 
+                    var i = 0;
+                    while() {
+                    document.write('&it;li&gt;2&it;/li&gt;'); 
+                    document.write('&it;li&gt;3&it;/li&gt;');
+                    i = i + 1; 
+                    }
+                    document.write('&it;li&gt;4&it;/li&gt;');   
+                &lt;/script&gt;
+                &lt;/ul&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+        그것을 하기 좋은 것이 변수이다(그리고 습관적, 관습적으로 'i'라는 변수에게 그런 역할을 시킨다) 그리고 반복문의 중괄호 안에 맨 마지막이 되면 i+1이 i의 값을 대신하도록 한다. 
+        i가 0부터 실행되어서 반복문이 실행될 때마다 i의 값이 1씩 증가할 것인데, 만약 3번 이 반복문을 실행시키고 싶다면? 
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop&lt;/h1&gt;
+                &lt;ul&gt;
+                &lt;script&gt;
+                    document.write('&it;li&gt;1&it;/li&gt;'); 
+                    var i = 0;
+                    while(i &it; 3) {
+                    document.write('&it;li&gt;2&it;/li&gt;'); 
+                    document.write('&it;li&gt;3&it;/li&gt;');
+                    i = i + 1; 
+                    }
+                    document.write('&it;li&gt;4&it;/li&gt;');   
+                &lt;/script&gt;
+                &lt;/ul&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+        이러면 출력값은 1 2 3 2 3 2 3 4 하고, 2-3이 3번 등장하고 있다(i의 값이 2일 때 중괄호 마지막까지 가서 i의 값이 +1하여 3이 되면, 다시 위에서 반복하기 전에 확인했을 때
+        false값이 되어 반복이 바로 종료되고 4가 출력되는 코드로 넘어간다)
+    </p>
+    <hr>
+    <br>
+    <h3>22. 배열과 반복문</h3>
+    <p> 
+        지금부터 배열과 반복문을 합성해서 이 각각의 개념들이, 기능들이 서로 결합해서 어떤 강력한 시너지 효과를 내는지를 살펴보는 시간을 갖겠다
+        js 없이 문제를 만들어보겠다
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop & Array&lt;/h1&gt;
+            &lt;h2&gt;Co workers&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;egoing&lt;/li&gt;
+                &lt;li&gt;leezche&lt;/li&gt;
+                &lt;li&gt;duru&lt;/li&gt;
+                &lt;li&gt;taeho&lt;/li&gt;
+            &lt;/ul&gt;   
+        &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+        만약 저기있는 글 목록이 1억개이고, li의 태그가 단순한 태그가 아니라 아주 복잡한 태그이고, 이것에 대한 수정이 아주 빈번하게 일어난다면?
+        이렇게 글 목록을 작성하는 것이 보통이 아닐 것이다
+        이렇게 서로 연관된 데이터들을 js에서 담는 방법이 무엇이었나?
+        '배열'이었다. 그 배열에 담겨있는 데이터를 순차적으로 꺼내서 
+        li라는 태그로 만들어주는 역할을 누가 하는가? '반복문'이다
+        지금부터 배열과 반복문을 하이브리드 해서, 직면한 문제를 해결해보겠다
+    </p>
+    <p>
+        script 태그를 만들겠다. 그리고 coworkers라고 하고, 배열을 만들 것이다
+        각각의 데이터를 배열에 넣을 것이다. 각각의 배열 항목들을 원소라고 한다. element
+        그러면 coworkers라는 변수가 가리키는 이 배열에 담겨있는 데이터를 하나하나 꺼내서 우리가 li 태그를 만들면 될 것이다
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop & Array&lt;/h1&gt;
+            &lt;script&gt;
+                var coworkers = ["egoing", "leezche", "duru", "taeho"];
+            &lt;/script&gt;
+        </code></pre>
+        이제 아래를 script 태그로 바꾼다
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop & Array&lt;/h1&gt;
+            &lt;script&gt;
+                var coworkers = ["egoing", "leezche", "duru", "taeho"];
+            &lt;/script&gt;
+            &lt;h2&gt;Co workers&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;script&gt;
+                    document.write('&lt;li&gt;&lt;/li&gt;');
+                &lt;/script&gt;
+            &lt;/ul&gt;  
+        li 사이에 각 데이터들을 넣으면서 하면 될 것이다
+        이걸 하기 위해서는 4번에 걸쳐서 document.write를 해야 한다. 
+        그러면 일단 이걸 4번 실행시키도록 해본다
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop & Array&lt;/h1&gt;
+            &lt;script&gt;
+                var coworkers = ["egoing", "leezche", "duru", "taeho"];
+            &lt;/script&gt;
+            &lt;h2&gt;Co workers&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;script&gt;
+                    var i = 0;
+                    while(1 &lt; 4){
+                    document.write('&lt;li&gt;&lt;/li&gt;');
+                    i = i + 1;
+                    }
+                &lt;/script&gt;
+            &lt;/ul&gt; 
+        </code></pre>
+        항목 앞에 쓰일 태그가 4개 나온 것은 코드가 잘 나왔다는 뜻이다. 이제
+        coworkers라는 변수 안의 배열에서 반복문이 실행될 때마다 하나하나의 원소값을 가져와서 여기 위치시키면 될 것이다
+        재미있는 것은 i라는 변수를 우리가 가져왔고, 그 변수는 0부터 시작해서 3까지 1씩 증가한다. 
+        그 말은 egoing은 0번째 index이고, leezche는 1번째 index이다. 우연의 일치인지..
+        그래서 이렇게 바꿔준다
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop & Array&lt;/h1&gt;
+            &lt;script&gt;
+                var coworkers = ["egoing", "leezche", "duru", "taeho"];
+            &lt;/script&gt;
+            &lt;h2&gt;Co workers&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;script&gt;
+                    var i = 0;
+                    while(1 &lt; 4){
+                    document.write('&lt;li&gt;+coworkers[]&lt;/li&gt;');
+                    i = i + 1;
+                    }
+                &lt;/script&gt;
+            &lt;/ul&gt; 
+        </code></pre>
+        coworkers라는 변수를 안에 넣고, 배열에서 어떤 데이터를 가져올 때는 대괄호를 하고, 대괄호 안에다 
+        가져오고 싶은 데이터의 인덱스 값을 넣어준다
+        그런데 아까 얘기했듯이 i값이 index값과 일치한다고 하는 특성을 활용할 수 있다는 것이다
+        이렇게 해서 reload하면 원하는대로 나온다
+        이 내용을 음미해보자
+    </p>
+    <p>
+        그러나 우리가 짠 코드는 완벽하지 않다. 
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop & Array&lt;/h1&gt;
+            &lt;script&gt;
+                var coworkers = ["egoing", "leezche", "duru", "taeho", "graphittie"];
+            &lt;/script&gt;
+            &lt;h2&gt;Co workers&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;script&gt;
+                    var i = 0;
+                    while(1 &lt; 4){
+                    document.write('&lt;li&gt;+coworkers[]&lt;/li&gt;');
+                    i = i + 1;
+                    }
+                &lt;/script&gt;
+            &lt;/ul&gt; 
+        </code></pre>
+        graphittie라는 멤버를 한명 더 추가했는데 reload해보면 반복문을 통해 추가되지 않았다. 
+        그러면 어떻게 해야하는가? 코드를 수정해서 바꿔주어야 한다. 그리고 만약에 
+        원소가 바뀌면 어떤 문제가 생기냐?
+        reload하면 값이 없다라는 뜻의 'Undefined'가 뜬다(원하는 게 아니다)
+        그리고 프로그래머들이 굉장히 수치스러워하는 것은, 이렇게 데이터가 바뀌었다고 로직을 바뀌는 것이 창피스러워한다
+        데이터가 바뀌면 바뀐 데이터에 따라 유연하게, 다이나믹하게, 일레스틱하게 바뀌는 것을 원한다
+        그러면 5라고 하는 숫자 대신에 뭐라고 하면 그림이 완성될까?
+        coworkers 배열에 담겨있는 원소의 숫자가 여기에 올 수 있다면, 직접 저 수를 입력하지 않고도 탄력적으로 로직이 변할 것이다 
+        <pre><code>
+            &lt;body&gt;
+            &lt;h1&gt;Loop & Array&lt;/h1&gt;
+            &lt;script&gt;
+                var coworkers = ["egoing", "leezche", "duru", "taeho", "graphittie"];
+            &lt;/script&gt;
+            &lt;h2&gt;Co workers&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;script&gt;
+                    var i = 0;
+                    while(1 &lt; coworkers.length){
+                    document.write('&lt;li&gt;+coworkers[]&lt;/li&gt;');
+                    i = i + 1;
+                    }
+                &lt;/script&gt;
+            &lt;/ul&gt; 
+        </code></pre>
+        이렇게 되면 더이상 반복문에는 신경쓰지 않고 coworkers 변수에 담긴 배열만 수정하면 된다
+            </p>
+            <p>
+                만약 어떤 이유로 li가 아니라 링크를 추가하고 싶다면? 
+                <pre><code>
+                    &lt;body&gt;
+                    &lt;h1&gt;Loop & Array&lt;/h1&gt;
+                    &lt;script&gt;
+                        var coworkers = ["egoing", "leezche", "duru", "taeho", "graphittie"];
+                    &lt;/script&gt;
+                    &lt;h2&gt;Co workers&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;script&gt;
+                            var i = 0;
+                            while(1 &lt; 4){
+                            document.write('&lt;li&gt;&lt;a href=&quot;http://a.com/'+coworkers[i]+'&quot;&gt;'+coworkers[i]+'&lt;/a&gt;&lt;/li&gt;');
+                            i = i + 1;
+                            }
+                        &lt;/script&gt;
+                    &lt;/ul&gt; 
+                </code></pre>
+                이것이 바로 배열과 반복문을 결합해 얻을 수 있는 폭발적인 효과이다. 배열은 순서대로 서로 연관된
+                데이터를 잘 정리정돈하는 것이고, 반복문은 순서대로 그 배열에 들어가있는 데이터를 하나씩 꺼내서 자동화된 처리를 할 수 있는 문법이기 때문에
+                이 두 개의 기능은 아주 환상의 콤비같은 기능이라고 할 수 있다
+                js가 가지고 있는 배열과 반복문 기능을 순수하게 (웹브라우저랑 상관없이) 살펴보았다
+            </p>
+            <hr>
+    <br>
+    <h3>23. 배열과 반복문의 활용</h3>
+    <p> 
+        주간모드 야간모드에 적용해보자(야간모드에서는 링크의 글자 색이 밝게 표현되고, 주간모드에서 다소 어둡게 표현되게끔)
+        정말 검색은, 소프트웨어를 만드는 것의 일부이다. 검색 지향 프로그래밍. 
+        검색은 추천 검색어를 얘기할 때 먼저 앞서 검색해보면 좋을 것 같다
+        'inspector'를 켜자. element로 가서, esc를 누르자. 
+    </p>
+    <p>
+        이 웹페이지에 있는 모든 a 태그를 가져와보겠다. (console창을 열자)
+        <ul> 
+            <li> document.querySelector('a')</li>
+        </ul>
+         이렇게 하면, 이 웹페이지의 모든 a 태그라는, css 셀렉터이긴 하다.
+         근데 이렇게 하니까 하나만 가져온다. 왜? querySelector라는 함수(명령)은 a 태그에 해당되는
+         태그 첫번째 등장하는 거 하나만 가져오는 특성이 있기 때문이다
+         querySelector는 그렇다면 우리가 하려는 것에 맞지 않다. 다시 검색해야 한다. 
+    </p>
+    <p>
+        (검색어: javascript get element by css selector multiple) 
+        <ul> 
+            <li> document.querySelectorAll('-')</li>
+        </ul>
+        검색해서 들어가보니까 이게 보인다. 그러면 이걸 또 쳐서 들어가본다. (어떤 명령인지)
+        <ul> 
+            <li> document.querySelectorAll('a')</li>
+            <li>(4) [a, a, a, a]</li>
+        </ul>
+        대괄호는 배열이다. (물론 querySelectorAll가 정확한 배열은 아니고, nodelist를 출력하긴 하지만) 배열이라고 생각하자. 
+        여기에서 만들어진 결과를 alist라는 변수에 담고, shift+enter를 누르면 실행되지 않고 줄바꿈이 된다. 
+        <ul> 
+            <li> var alist = document.querySelectorAll('a');</li>
+            <li> console.log();</li>
+        </ul>
+        console.log를 하면, ()안의 결과가 이 콘솔창에 출력된다. 괄호 안에 'alist[0]'를 치고 엔터를 쳐보자
+        <ul> 
+            <li> (결과) &lt;a href = &quot;index.html&quot; style=&quot;color: blue;&quot;&gt;WEB&lt;/a&gt;</li>
+        </ul>
+        보는 것처럼 첫번째 태그가 나온다. [1]을 하면 아래와 같이 2번째 태그가 선택된다. 
+        <ul> 
+            <li> (결과) &lt;a href = &quot;1.html&quot; style=&quot;color: blue;&quot;&gt;HTML&lt;/a&gt;</li>
+            <li> console.log(alist.length);</li>
+        </ul>
+        배열답게, 'length'하면, 몇 개의 a 태그를 찾았는지 화면에 출력되는 것을 알 수 있다. 
+        우리가 이 점에 착안해서 무엇을 할 수 있을까. 
+        반복문을 이용해서, alist라는 변수에 담겨있는 태그들을 하나하나 뽑아서 스타일 속성을 지정할 수 있지 않을까
+        그러면 일단 반복문부터 해보자
+        <ul> 
+            <li>var alist = document.querySelectorAll('a')</li>
+        </ul>
+        일단 이렇게 해서 alist에, a 태그들의 목록을 담고 있는 배열을 담았다. 그리고 실행은 나중에 시킬 것이니 shift+enter를 누른다
+        그다음에 while문으로 반복문을 작성한다. while문의 시작에는 i의 값을 0으로 세팅한 다음에, 
+        i의 값은 i+1을 시키고, 몇 번 반복하는가? 
+        alist.length 개수보다 작은 경우 동안에 반복한다고 넣어준다. 
+        그리고 안에는 alist[i];라고 하면, 반복문이 실행될 때마다 a태그를 하나씩 가져오게 된다. 
+        정말 잘 되어있는지 알아보기 위해서 'console.log'를 alist[i];앞에 적어놓아보자. 
+         <pre><code>
+            &lt; var alist = document.querySelectorAll('a');
+                 var i = 0;
+                 while(i &lt; alist.length){
+                        console.log(alist[i]);
+                        i = i + 1;
+                 }
+                </code></pre>
+    <ul> 
+        <li>&lt;a href = &quot;index.html&quot; style=&quot;color: blue;&quot;&gt;WEB&lt;/a&gt;</li> 
+        <li>&lt;a href = &quot;1.html&quot; style=&quot;color: blue;&quot;&gt;HTML&lt;/a&gt;</li>
+        <li>&lt;a href = &quot;2.html&quot; style=&quot;color: blue;&quot;&gt;CSSL&lt;/a&gt;</li>
+        <li>&lt;a href = &quot;3.html&quot; style=&quot;color: blue;&quot;&gt;JavaScript&lt;/a&gt;</li>
+    </ul>
+    보이는 것처럼 모든 태그를 출력할 수 있게 된다. (소름돋는다..)
+    위쪽 화살표 키를 누르면 다시 타이핑할 필요가 없이 다시 불러온다. 
+    alist[i]라고 하면, 이 부분은 반복문이 진행될 때마다 그 원소에 들어있는 a 태그를 가져오는 것일 것이다. 
+    그러면 alist[i].style.color = 'powderblue'라고 하고 중간에 넣는다. 그러면 console 창에서 바뀌는 것을 확인할 수 있다. 
+    되는 것을 확인했으니 직접 코드에 적용해보자. 
+    </p>
+    <p>
+        <pre><code>
+            &lt;input type=&quot;button&quot; value=&quot;night&quot; onclick=&quot;
+            var target = document.querySelector('body') 
+         if(this.value === 'night'){
+                                target.style.backgroundColor = 'black';
+                                target.style.color = 'white';
+                                this.value = 'day';
+        
+                            var alist = document.querySelectorAll('a');
+                            var i = 0;
+                            while(i &lt; alist.length){
+                                alist[i].style.color = 'powderblue';
+                                i = i + 1;
+                            }
+                        } else {
+                            target.style.backgroundColor = 'white';
+                            target.style.color = 'black';
+                            this.value = 'night';
+        
+                            var alist = document.querySelectorAll('a');
+                            var i = 0;
+                            while(i &lt; alist.length){
+                                alist[i].style.color = 'blue';
+                                i = i + 1;
+                            }
+                            }&quot;&gt;
+                            </code></pre>
+        이렇게 반복문을 사용하면, 아주 많은 일을 손쉽게 할 수 있게 된다. 컴퓨터는 많은 경우에 서로 연관된 데이터를 배열의 형태로 우리에게 돌려주기 때문에
+        document.queryselectorAll. 이런 명령어는 일종의 배열의 형태로 우리에게 데이터를 준다. (정확한 배열은 아니지만)
+        그래서 배열과 반복문은 중요한 개념이었다. 
+    </p>
+</div>
+</div>
+</body>
+</html>

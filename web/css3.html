@@ -1,0 +1,439 @@
+<!doctype html>
+<html>
+<head>
+    <title>꾸꾸의 학습기록 - 예습</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="colors.js"></script>
+</head>
+<body>
+    <h1><a href="index.html">꾸꾸의 학습기록</a></h1>
+    <div id="grid">
+        <div id="index">
+    <ol>
+        <li><a href="1.html">HTML 1</a></li>
+        <li><a href="2.html">HTML 2</a></li>
+        <li><a href="3.html">HTML 3</a></li>
+        <li><a href="4.html">HTML 4</a></li>
+        <li><a href="5.html">HTML 5</a></li>
+        <li><a href="6.html">HTML 6</a></li>
+        <li><a href="css1.html">CSS 1</a></li>
+        <li><a href="css2.html">CSS 2</a></li>
+        <li><a href="css3.html">CSS 3</a></li>
+        <li><a href="css4.html">CSS 4</a></li>
+        <li><a href="css5.html">CSS 5</a></li>
+        <li><a href="js1.html">JS 1</a></li>
+        <li><a href="js2.html">JS 2</a></li>
+        <li><a href="js3.html">JS 3</a></li>
+        <li><a href="js4.html">JS 4</a></li>
+        <li><a href="js5.html">JS 5</a></li>
+        <li><a href="js6.html">JS 5</a></li>
+        <li><a href="js7.html">JS 5</a></li>
+        
+
+    </ol>
+</div>
+<div id="article">
+<h2>'생활코딩' 학습기록: CSS 3</h2>
+<hr>
+<br>
+<h3>08. 박스모델</h3>
+<p>
+    <pre><code>
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;CSS&lt;/h1&gt; 
+    CSS (&lt;a href=&quot;https://www.w3schools.com/cssref/css_selectors.php&quot;Cascading Style Sheets&lt;/a&gt;)는 웹페이지를 꾸미려고 작성하는 코드
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+여기에서 h1 태그는 화면 전체를 쓰고 있음을 알 수 있다
+그런데, 이 장면을 좀 낯설게 보자
+h1 태그는 화면 전체를 쓰고 있다(줄바꿈이 되어버렸다)
+그러나 a 태그는 똑같은 태그임에도 줄바꿈이 되지 않고 다른 컨텐츠와는 다른 라인에 위치하ㅗㄱ 있다
+이런 차별이 왜 존재할까?
+h1 태그는 제목태그인데, 제목태그는 화면 전체를 쓰는 것이 기본적으로는 더 편리하기 때문이다그
+그리고 링크가 화면 전체를 쓴다면, 링크 앞뒤로 있는 컨텐츠가 줄바꿈이 된다면 상당히 불편하기 때문에
+기본적으로 링크는 줄바꿈을 하지 않고 딱 자기의 컨텐트 크기만큼을 쓴다고 짐작할 수 있다
+</p>
+<p>
+그런데 우리가 짐작이 아니라 분명하게 시각적으로 보는 방법이 있다
+투명인간이 있는데 이 사람의 부피를 알기 위한 좋은 방법이 무엇일까
+페인트를 던져버린다
+h1과 a 태그를 테두리를 그리면 부피감을 알 수 있다
+<pre><code>
+
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        h1 {
+            border-width:5px;
+            border-color:red;
+            border-style: solid;
+        }
+    &lt;/style&gt;
+    
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;CSS&lt;/h1&gt; 
+    CSS (&lt;a href=&quot;https://www.w3schools.com/cssref/css_selectors.php&quot;Cascading Style Sheets&lt;/a&gt;)는 웹페이지를 꾸미려고 작성하는 코드
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+테두리의 두께를 5px로 정해자자
+테두리의 실선도 정해보자
+테두리의 모양도 정해야 한다(점선, 실선..) 단선일 경우 'solid(일반적인 선)'
+이 결과를 보면 h1 태그가 화면 전체를 쓴다는 것을 알 수 있다
+</p>
+<p>
+a 태그도 동일하게 해보면, a 태그는 화면 전체를 쓰지 않고, 자기 자신의 컨텐트의 크기만큼 
+부피를 쓴다는 것을 알 수 있다
+html 여러 태그들은 그 성격과 일반적인 쓰임에 따라 화면 전체를 쓰는 것이 편한 것과,
+자신의 크기만큼의 부피를 쓰는 것이 편한 것들이 있기 때문에 
+화면 전체를 쓰는 태그들 몇십개가 있고, 자기 크기만한 크기를 쓰는 태그들이 몇십개가 ㅣㅆ다
+화면 전체를 쓰는 태그들을 '블럭'이라고 한다
+<pre><code>
+    block level element : 
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        h1 {
+            border-width:5px;
+            border-color:red;
+            border-style: solid;
+        }
+    &lt;/style&gt;
+    
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;CSS&lt;/h1&gt; 
+    CSS (&lt;a href=&quot;https://www.w3schools.com/cssref/css_selectors.php&quot;Cascading Style Sheets&lt;/a&gt;)는 웹페이지를 꾸미려고 작성하는 코드
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+자기 자신의 부피만큼의 크기를 갖는 태그: inline element
+(구분이 중요하지 않다. 어떤 태그가 화면 전체를 쓰고, 어떤 태그는 부분을 쓴다는 것을 이해하는 것이 중요하다)
+<pre><code>
+    
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        h1 {
+            border-width:5px;
+            border-color:red;
+            border-style: solid;
+        }
+    &lt;/style&gt;
+    
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;CSS&lt;/h1&gt; 
+    CSS (&lt;a href=&quot;https://www.w3schools.com/cssref/css_selectors.php&quot;Cascading Style Sheets&lt;/a&gt;)는 웹페이지를 꾸미려고 작성하는 코드
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</p>
+<p>
+    block level element라고 하더라도, 얘를 inline element처럼 자신의 부피만큼 쓰게 할 수도 있다
+    <pre><code>
+    
+        &lt;!doctype html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style&gt;
+            h1 {
+                border-width:5px;
+                border-color:red;
+                border-style: solid;
+                display:inline;
+            }
+        &lt;/style&gt;
+        
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;CSS&lt;/h1&gt; 
+        CSS (&lt;a href=&quot;https://www.w3schools.com/cssref/css_selectors.php&quot;Cascading Style Sheets&lt;/a&gt;)는 웹페이지를 꾸미려고 작성하는 코드
+    &lt;/body&gt;
+    &lt;/html&gt;
+    </code></pre>
+    display라는 어떤 속성을 이용해서, 'inline'이라고 써주면 된다
+    inline도 마찬가지이다(만일 display: block;라고 적으면 블록이 된다)
+</p>
+<p>
+    즉, block level element와 inline element는 display 속성의 기본값일뿐
+    그 기본값은 내가 css를 통해서 언제든지 바꿀 수 있다는 것도 살짝 기억하자
+   <br><hr>
+   **참고로 display: none;을 하면 그 해당 태그가 사라지는 마법이 일어난다(나중에 중요할 때가 오니 기억하자)
+</p>
+<p>
+    <pre><code>
+            &lt;style&gt;
+            h1 {
+                border-width:5px;
+                border-color:red;
+                border-style: solid;
+                display:inline;
+            }
+            a {
+                border-width:5px;
+                border-color:red;
+                border-style: solid;
+                display:inline;
+            }
+        &lt;/style&gt;
+    </code></pre>
+    지독히 싫어하는 중복이 등장한다. 
+    해결하는 방법은 바로 'h1, a'라고 쓰는 것이다
+    선택자에서 ,라는 선택자를 통해서 코드의 양을 효과적으로 줄일 수 있다
+</p>
+<pre><code>
+      &lt;style&gt;
+        h1, a {
+            border-width:5px;
+            border-color:red;
+            border-style: solid;
+            display:inline;
+        }
+    &lt;/style&gt;
+</code></pre>
+그런데도 아직 'border'가 중복이 된다. 보기 싫다. 
+<pre><code>
+    &lt;style&gt;
+      h1, a {
+          border:5px solid red;
+      }
+  &lt;/style&gt;
+</code></pre>
+5px, solid, red의 순서는 중요하지 않다(아무 위치에나 넣으면 된다)
+<br><hr>
+<p>
+ 컨텐트와 박스 테두리 안에 여백을 주고 싶다면 어떻게 할까?
+ <pre><code>
+    &lt;style&gt;
+      h1, a {
+          border:5px solid red;
+          padding:20px;
+      }
+  &lt;/style&gt;
+</code></pre>
+추울 땐 패딩을 입어야 한다 박스 안쪽 여백이 생긴다
+<pre><code>
+        &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+    h1, a {
+        border:5px solid red;
+        padding:20px;
+    }
+    &lt;/style&gt;
+    
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;CSS&lt;/h1&gt; 
+    &lt;h1&gt;CSS&lt;/h1&gt; 
+css를 배우자
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+테두리와 테두리 사이에 간격이 생긴다
+이 간격은 왜 생기는가?
+장사를 하면 margin이 남는다. 
+<pre><code>
+    
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+    h1, a {
+        border:5px solid red;
+        padding:20px;
+        margin:0;
+    }
+    &lt;/style&gt;
+    
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;CSS&lt;/h1&gt; 
+    &lt;h1&gt;CSS&lt;/h1&gt; 
+css를 배우자
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+이러면 두 박스 사이 테두리의 간격이 사라진다
+그러나 숫자를 적을수록(ex. 20px) 그만큼 간격이 생겨난다
+</p>
+<p>
+    우리가 지금 사용하는 h1 태그는 박스모델상 'display:block;'인 상태가 생략되어 있는 상황이다
+    블록수준의 태그는 화면 전체를 쓴다는 특징이 있다
+    그런데 화면 전체를 쓰는 블록 수준 태그의 특징을 바꾸고 싶다. 그러면 width값으로 100px 정도를 주면 풀리징ㄴ
+<pre><code>
+    &lt;style&gt;
+    h1, a {
+        border:5px solid red;
+        padding:20px;
+        margin:0;
+    }
+    &lt;/style&gt;
+</code></pre>
+100px의 tag의 크기가 변경된다는 것까지 알면 box모델에 대해서 다 이해한 것이다
+</p>
+
+<p>
+굉장히 중요한 부분을 보러가자 - 개발자 도구의 중요성
+웹페이지에서 오른쪽을 클릭하면 검사라는 항목이 있다. 눌러보자
+h1 태그를 선택했을 때 지저분해진다 (이건 다 이유가 있다)
+태그를 선택하고, 오른쪽 창에서 style 탭에 써있는 부분은 무엇이냐 하면, 
+이 h1 태그가 어떤 css 스타일의 영향을 받고 있는가를 일목요연하게 보여주는 굉장히 중요한 기능이다
+이 기능을 사용하지 않으면 css와 html이 복잡해졌을 때, 어떤 하나의 태그가 어떤 css의 영향을 받는지를 찾기가 곤란해질 것이다
+그렇기에 이런 도구를 잘 이해하는 것은 굉장히 중요하다(웹개발할 때 도와주는 도구이다)
+스크롤해서 밑으로 보내면, 컨텐트와 padding이 해당되는 부분, border의 부분이 어느 정도 영역을 차지하는지 그림으로 ㅂ여준다
+이런 것을 활용하지 않으면, 이런 것을 활용한 사람들이 만든 웹페이지를 보고 '어떻게 사람이 했지' 하고 경외감을 가질 것이다
+그러나 사람이 한 것이 아니기는 하다. 사람과 기계가 같이 한 것이다(그래서 뛰어난 것)
+</p>
+<p>
+    box모델이란, html 태그 하나하나를 일종의 box로 취급하는 개념이다
+    그것의 부피감을 결정하는다태그들을 배웠고,
+    부피감을 결정하는 것은 잠시만 생각해보면 디자인에서 핵심적인 요소라는 것을 알 수 있을 것이다
+</p>
+<br>
+<hr>
+<h3>09. 박스모델 써먹기</h3>
+<p>
+    메인 제목 아래 밑줄을 그어서 화면을 분할하기 위해서는 테두리를 사용해야 한다
+    그리고 그 테두리를 누구에게 주면 되나. h1에게 주면 된다
+    h1 태그에 이렇게 적어보자
+    <pre><code>
+        &lt;style&gt;
+        h1 {
+            border:1px solid gray;
+            }
+        &lt;/style&gt;
+    </code></pre>
+그러나 우리는 아래쪽 테두리만 필요하다. 그러면 이렇게 해주자
+<pre><code>
+    &lt;style&gt;
+    h1 {
+        border_bottom:1px solid gray;
+        }
+    &lt;/style&gt;
+</code></pre>
+그런데 위치가 조금 애매하다 위치도 이상하고 밑도 작다
+패딩도 그렇고 조절을 해야겠지만, 제일 먼저 해야할 것은 문제에 가까이 가는 것이다
+검사 버튼을 눌러서 개발자 도구를 켜보자. 
+</p>
+<p>
+    h1 태그를 선택했을 때, style 탭에서 그림 위로 스크롤해보며 색상을 보자.  
+    큰제목의 바깥에 있는 부분은 누구로 인해서 저렇게 되는 것인가 생각해보자. 'margin'이네. 이것때문임을 알 수 있다
+    그러면 margin 값을 없애자. 
+    <pre><code>
+        &lt;style&gt;
+        h1 {
+            border_bottom:1px solid gray;
+            margin:0;
+            }
+        &lt;/style&gt;
+    </code></pre>
+    마진값을 너무 없앴더니, 테두리와 큰제목 텍스트가 달라붙어있다
+    그러면 적당히 테두리와 떨어드리기 위해서 padding 값을 줄 수 있다. 
+    <pre><code>
+        &lt;style&gt;
+        h1 {
+            border_bottom:1px solid gray;
+            margin:0;
+            padding:20px;
+            }
+        &lt;/style&gt;
+    </code></pre>
+이렇게 박스모델을 사용하는 것이다
+</p>
+<p>
+    이번에는 세로로 줄을 그어서 목차와 구분하는 것도 해보고 싶다
+    <pre><code>
+        &lt;body&gt;
+            &lt;h1&gt;&lt;a href=&quot;index.html&quot;&gt;WEB&lt;/a&gt;&lt;/h1&gt;
+            &lt;ol&gt;
+            &lt;li&gt;&lt;a href=&quot;1.html&quot; class=&quot;saw&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;2.html&quot; class=&quot;saw&quot; id=&quot;active&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;3.html&quot;&gt;JavaScrip&lt;/a&gt;&lt;/li&gt;
+            &lt;/ol&gt;
+    </code></pre>
+    이 부분이 세로줄을 가진 부분이다. 
+   그래서 ol 태그의 테두리를 활용한다
+   <pre><code>
+    &lt;style&gt;
+    ol {
+        border_right:1px solid gray;
+        }
+    &lt;/style&gt;
+</code></pre>
+그런데 모양이 이상하다. 오른쪽 벽에 테두리가 너무 붙어있다(ol 태그는 화면 전체를 쓰는 블록 수준 태그이기 떄문)
+이 element의 끝 오른쪽 테두리에 가는 것이다
+그러면 이렇게 해준다
+<pre><code>
+    &lt;style&gt;
+    ol {
+        border_right:1px solid gray;
+        width:100px;
+        }
+    &lt;/style&gt;
+</code></pre>
+그러면, 이제 또 세로줄 위쪽 여백이 신경쓰인다
+이런 사소한 것들이 해결하는 것이 훨씬 더 어려워진다
+보니 ol 태그의 margin 값 때문임을 알 수 있다
+그래서 이렇게 해본다
+<pre><code>
+    &lt;style&gt;
+    ol {
+        border_right:1px solid gray;
+        width:100px;
+        margin:0;
+        }
+    &lt;/style&gt;
+</code></pre>
+그런데 그랬더니 ol 태그 내의 텍스트들이 너무 지저분하게 붙어있다
+그래서 ol 태그에게 padding 값을 준다
+<pre><code>
+    &lt;style&gt;
+    ol {
+        border_right:1px solid gray;
+        width:100px;
+        margin:0;
+        }
+    &lt;/style&gt;
+</code></pre>
+그런데 또, 끝까지 가로줄이 안 닿아있는 문제가 있다
+보니, body 태그의 margin 값이 문제이다
+<pre><code>
+    &lt;style&gt;
+    body {
+        margin:0;
+        }
+    &lt;/style&gt;
+</code></pre>
+여기까지 했으면 이제 맨 밑에 쏠려있는 본문 글을 오른쪽 박스 내로 끌고 오면 될 것 같다
+</p>
+</div>
+</div>
+</body>
+</html>

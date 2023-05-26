@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+    <title>꾸꾸의 학습기록 - 예습</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="colors.js"></script>
+</head>
+<body>
+    <h1><a href="index.html">꾸꾸의 학습기록</a></h1>
+    <div id="grid">
+        <div id="index">
+    <ol>
+        <li><a href="1.html">HTML 1</a></li>
+        <li><a href="2.html">HTML 2</a></li>
+        <li><a href="3.html">HTML 3</a></li>
+        <li><a href="4.html">HTML 4</a></li>
+        <li><a href="5.html">HTML 5</a></li>
+        <li><a href="6.html">HTML 6</a></li>
+        <li><a href="css1.html">CSS 1</a></li>
+        <li><a href="css2.html">CSS 2</a></li>
+        <li><a href="css3.html">CSS 3</a></li>
+        <li><a href="css4.html">CSS 4</a></li>
+        <li><a href="css5.html">CSS 5</a></li>
+        <li><a href="js1.html">JS 1</a></li>
+        <li><a href="js2.html">JS 2</a></li>
+        <li><a href="js3.html">JS 3</a></li>
+        <li><a href="js4.html">JS 4</a></li>
+        <li><a href="js5.html">JS 5</a></li>
+        <li><a href="js6.html">JS 5</a></li>
+        <li><a href="js7.html">JS 5</a></li>
+
+    </ol>
+</div>
+<div id="article">
+<h2>'생활코딩' 학습기록: HTML 2-1</h2>
+<hr>
+<br>
+<h3>Form Tags</h3>
+<p>
+ html로 form 태그를 다루면서 정말 많은 태그와 attribute들과 form 태그 안의 다른 태그들도 학습할 수 있다. 
+ 우선 간단한 form을 만들어보면서 태그와 attribute의 강력함을 느껴보자. 
+ form을 만드려면 form 태그가 필요할 것이다. 
+ <pre><code>
+    &lt;form&gt;
+
+    &lt;/form&gt;
+ </code></pre> 
+ 모든 다른 것들을 이 form 태그 안에 추가할 것이다. 
+ form 안에 뭘 만들어줘야 할까? form의 양식을 만들어주어야 한다. 
+ 양식 중에 제일 중요한 태그는 input 태그이다. 
+ (모든 웹사이트는 input을 가지고 있다.)
+ self-closing 태그인 input을 작성해주고, 이렇게 닫아주자. 
+ <pre><code>
+    &lt;form&gt;
+        &lt;input /&gt;
+    &lt;/form&gt;
+ </code></pre> 
+ 그러면 텍스트 상자가 하나 생긴다. 
+ </p>
+ <p>
+    또 다른 유형(type)을 살펴보자. 
+    input은 하나 혹은 여러 개의 type을 가질 수 있다. 
+        <pre><code>
+        &lt;form&gt;
+            &lt;input type="color" /&gt;
+        &lt;/form&gt;
+     </code></pre> 
+     type 중 하나로 color를 넣어보자. 그러면 눌렀을 때 색을 고를 수 있는 팔레트 창이 나온다. 
+     <pre><code>
+        &lt;form&gt;
+            &lt;input type="password" /&gt;
+        &lt;/form&gt;
+     </code></pre> 
+     password는 텍스트 상자 형태로 여기에서 타이핑을 할 수 있다. (타이핑을 치면 ****형태로 나온다.)
+ </p>
+ <p> 
+    이름, 성, 사용자 이름, 그리고 비밀번호를 만들어보자. 
+    이름의 type은 기본값인 text로 지정해주자. 
+    <pre><code>
+        &lt;form&gt;
+            &lt;input type="text" /&gt; // 이름
+            &lt;input type="text" /&gt; // 성
+            &lt;input type="text" /&gt; // 사용자 이름
+            &lt;input type="password" /&gt; // 비밀번호
+        &lt;/form&gt;
+     </code></pre> 
+     여기에 placeholder라는 attribute를 추가시켜보자. 
+     placeholder는 input이 가지는 또 다른 attribute이다. 
+     <pre><code>
+        &lt;form&gt;
+            &lt;input placeholder="Name" type="text" /&gt; // 이름
+            &lt;input placeholder="Last Name" type="text" /&gt; // 성
+            &lt;input placeholder="Username" type="text" /&gt; // 사용자 이름
+            &lt;input placeholder="Password" type="password" /&gt; // 비밀번호
+        &lt;/form&gt;
+     </code></pre> 
+     그러면 텍스트 상자 위에 무엇을 적어야 하는지가 나타난다. 
+     그러면 이제 버튼을 만들자
+     type가 submit인 input을 만들어주자. 
+     <pre><code>
+        &lt;form&gt;
+            &lt;input placeholder="Name" type="text" /&gt; // 이름
+            &lt;input placeholder="Last Name" type="text" /&gt; // 성
+            &lt;input placeholder="Username" type="text" /&gt; // 사용자 이름
+            &lt;input placeholder="Password" type="password" /&gt; // 비밀번호
+            &lt;input type="submit" /&gt;
+        &lt;/form&gt;
+     </code></pre> 
+     그러면 네 개의 버튼 뒤로 submit 버튼이 생성되었다. 
+     이 버튼을 누르면 form을 어디론가 보내주게 된다. 
+     지금 버튼을 누르면 사이트가 새로고침될 것이다. (form이 지금은 뭘 할지 모르기 때문에)
+     </p>
+     <p>
+        value라는 attribute를 통해 버튼에 적혀있는 submit을 바꿀 수도 있다. 
+        value에 Create Account라고 입력해보자. 
+        <pre><code>
+            &lt;form&gt;
+                &lt;input placeholder="Name" type="text" /&gt; // 이름
+                &lt;input placeholder="Last Name" type="text" /&gt; // 성
+                &lt;input placeholder="Username" type="text" /&gt; // 사용자 이름
+                &lt;input placeholder="Password" type="password" /&gt; // 비밀번호
+                &lt;input type="submit" value="Create Account" /&gt;
+            &lt;/form&gt;
+         </code></pre> 
+        새로고침해보면 submit 버튼이 Create Account라는 글자가 적힌 버튼으로 변경되었다. 
+        <pre><code>
+            &lt;form&gt;
+                &lt;input placeholder="Name" type="text" /&gt; // 이름
+                &lt;input placeholder="Last Name" disabled type="text" /&gt; // 성
+                &lt;input placeholder="Username" type="text" /&gt; // 사용자 이름
+                &lt;input placeholder="Password" type="password" /&gt; // 비밀번호
+                &lt;input type="submit" value="Create Account" /&gt;
+            &lt;/form&gt;
+         </code></pre> 
+         disabled라는 속성도 있는데, 해보면 last name인 input을 클릭할 수가 없다. 
+         <pre><code>
+            &lt;form&gt;
+                &lt;input required placeholder="Name" type="text" /&gt; // 이름
+                &lt;input required placeholder="Last Name" disabled type="text" /&gt; // 성
+                &lt;input required placeholder="Username" type="text" /&gt; // 사용자 이름
+                &lt;input required placeholder="Password" type="password" /&gt; // 비밀번호
+                &lt;input type="submit" value="Create Account" /&gt;
+            &lt;/form&gt;
+         </code></pre> 
+         모든 input 태그에 required라는 attribute를 추가해보자. (submit 제외)
+        새로고침해서 버튼을 눌러보자. 
+         required라는 attribute만을 추가해서 form을 validation(검증)을 할 수 있다. 
+         (이름만을 적고 submit을 누르면, 성을 적으라고 뜬다. )
+         <pre><code>
+            &lt;form&gt;
+                &lt;input required placeholder="Name" type="text" /&gt; // 이름
+                &lt;input required placeholder="Last Name" disabled type="text" /&gt; // 성
+                &lt;input required placeholder="Username" type="text" /&gt; // 사용자 이름
+                &lt;input required placeholder="Password" minlength="10" type="password" /&gt; // 비밀번호
+                &lt;input type="submit" value="Create Account" /&gt;
+            &lt;/form&gt;
+         </code></pre> 
+         minlength는 길이가 최소한 --글자 이상이 되어야 한다는 것이다. 
+         <pre><code>
+            &lt;form&gt;
+                &lt;input required placeholder="Name" type="text" /&gt; // 이름
+                &lt;input required placeholder="Last Name" disabled type="text" /&gt; // 성
+                &lt;input required placeholder="Username" type="text" /&gt; // 사용자 이름
+                &lt;input required placeholder="Password" minlength="10" type="password" /&gt; // 비밀번호
+                &lt;input type="submit" value="Create Account" /&gt;
+            &lt;/form&gt;
+         </code></pre> 
+         type이 file인 input 하나를 더 추가해보자.
+         그러면 업로드할 파일을 선택할 수 있다.  
+         type이 file일 경우에만 사용 가능한 accept 라는 attribute가 있다. 
+         accept를 문서에서 확인해보면, 특정 file의 유형들만 선택하게끔 하는 기능을 제공해준다. (파일 확장자가 doc이거나 docs거나..)
+         <pre><code>
+            &lt;form&gt;input 
+                &lt;input type="file" id="docpicker"
+                accept=".doc,.docx,application/msword,application/vnd/&gt;
+            &lt;/form&gt;
+         </code></pre> 
+         <pre><code>
+            &lt;form&gt;
+            &lt;input type="file" accept=".pdf"&gt; // pdf 파일만
+            &lt;input type="file" accept=".png"&gt; // png 파일만
+            &lt;input type="file" accept="image/*"&gt; // 이미지 파일이면 전부 괜찮음          
+            &lt;input type="file" accept="image/*,.pdf"&gt; // 아무 이미지 형식 및 pdf 형식을 받아줌        
+        </code></pre> 
+         type가 file일 경우에만 사용 가능한 accept라는 attribute가 있다. 
+         이 경우 특정 file의 유형들만 선택하게끔 하는 기능을 제공해준다. (파일 확장자가 doc거나, docs거나...'application/msword'[어떤 종류의 msword파일이든])
+        </p>
+        <p>
+            <pre><code>
+                &lt;tagname attribute-name="attribute-value"&gt;blablabla&lt;/tagname&gt;
+            </code></pre> 
+            이게 태그의 기본 문법이다. 저렇게 "attribute-value" 값을 넣을 때는, 해당 attribute 자체가 값이 많을 때이다. 
+            만약 attribute 값이 true나 false만 있을 경우에는 (required) 그대로 넣어줘도 괜찮다. 
+        </p>
+<hr>
+<br>
+<h3>More Tags & IDs</h3>
+<p>
+    이제 form을 좀 더 괜찮게 만들어볼 것이다. label이라는 태그를 사용해보겠다. 
+    label 태그는 form에 question을 추가할 수 있다. 
+    label 태그의 content 옆 박스를 클릭해보면 체크상자에 체크가 된다. 이걸 만들어볼 것이다. 
+    <pre><code>
+        &lt;form&gt; 
+         &lt;label&gt;Profile Photo&lt;/label&gt;
+         &lt;input type="file" accept=".pdf"&gt; // pdf 파일만
+         &lt;input required placeholder="Name" type="text" /&gt; // 이름
+        &lt;/form&gt; 
+    </code></pre> 
+    이렇게만 적으면 동작이 안 된다. label은 input과 함께여야 작동이 된다. 
+    같이 사용하는 방법은 되게 간단하다. 
+    label 태그는 for이라는 attribute를 적어주면 된다.
+    그리고 input 태그에는 id라는 attribute를 넣어줘야 한다. 
+    <pre><code>
+        &lt;form&gt; 
+         &lt;input label for="profile"&gt;Profile Photo&lt;/label&gt;
+         &lt;input id="profile" type="file" accept=".pdf"&gt; // pdf 파일만
+         &lt;input required placeholder="Name" type="text" /&gt; // 이름
+        &lt;/form&gt; 
+    </code></pre>  
+    이때, id와 for에 들어가는 값은 동일해야 한다. 
+    만약 두 개의 값이 같다면, 'Profile Photo'를 클릭하면, 
+    for과 같은 값을 가진 id를 들고 있는 input을 작동시켜준다.(작성할 수 있게 활성화된다.)
+    <pre><code>
+        &lt;form&gt; 
+         &lt;input label for="profile"&gt;Profile Photo&lt;/label&gt;
+         &lt;input id="profile" type="file" accept=".pdf"&gt; // pdf 파일만
+         &lt;input label for="first-name"&gt;=First Name&lt;/label&gt;
+         &lt;input id="first-name" required placeholder="Name" type="text" /&gt; // 이름
+        &lt;/form&gt; 
+    </code></pre>
+    공백을 입력하지 않고 for과 id를 일치시켜놓았다. 이제 First Name을 누르면 name input에 입력을 바로 할 수 있게 된다. 
+ </p>
+ <p>
+    <pre><code>
+        &lt;form&gt; 
+         &lt;input label for="website"&gt;Website&lt;/label&gt;
+         &lt;input id="website" required placeholder="address" type="url"&gt; 
+        &lt;/form&gt; 
+    </code></pre>  
+    그러면 address라고 써있는 텍스트상자에 텍스트 문자를 치고 제출버튼을 누르면, url 형식으로 입력하라고 메시지가 뜬다. 
+    <pre><code>
+        &lt;form&gt; 
+         &lt;input label for="website"&gt;Website&lt;/label&gt;
+         &lt;input id="website" required placeholder="address" type="email"&gt; 
+        &lt;/form&gt; 
+    </code></pre>  
+    type="email"도 비슷한 효과가 나온다. 
+</p>
+<p>
+    <pre><code>
+        &lt;form&gt; 
+         &lt;input label for="website"&gt;Website&lt;/label&gt;
+         &lt;input id="website" required placeholder="address" type="range"&gt; 
+        &lt;/form&gt; 
+    </code></pre> 
+    range 타입은 마우스로 끌어서 양쪽으로 정도 조절을 할 수 있는 바가 나온다. 
+    <pre><code>
+        &lt;form&gt; 
+         &lt;input label for="website"&gt;Website&lt;/label&gt;
+         &lt;input id="website" required placeholder="address" type="date"&gt; 
+        &lt;/form&gt; 
+    </code></pre> 
+    date 태그는 날짜를 고를 수 있는 토글 창이 나온다.(이때는 글자는 못쓰고, 연도/달/월을 적을 수 있는 숫자만 타이핑할 수 있다.)
+</p>
+<p>
+    사실 핵심은 id이다. id는 body 안에 어떤 태그이든 넣을 수 있는 attibute이다. 
+    id는 중요하다. body 안에 어떤 태그에도 id를 넣을 수 있는 이유는, id는 unique identifier이기 때문이다(고유식별자)
+    element당 하나의 id만 가질 수 있는 게 id의 규칙이다. 
+    태그 하나당 하나의 id만 가질 수 있다. 그리고 id의 값은 전체 html 문서에서 unique(고유)해야 한다. 
+    id라는 attribute의 목적은 scription이나 css를 식별하려는 것이다. 
+</p>
+</div>
+</div>
+</body>
+</html>

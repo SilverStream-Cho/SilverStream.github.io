@@ -1,0 +1,475 @@
+<!doctype html>
+<html>
+<head>
+        <title>꾸꾸의 학습기록 - 예습</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="colors.js"></script>
+</head>
+<body>
+    <h1><a href="index.html">꾸꾸의 학습기록</a></h1>
+    <nav>
+        <span id="home"><a href="home.html">Home</a></span>
+        <span id="html"><a href="#">HTML</a></span>
+        <span id="css"><a href="#">CSS</a></span>
+        <span id="js"><a href="#">JavaScript</a></span>
+        <span id="java"><a href="#">JAVA</a></span>
+    </nav>
+    <div id="grid">
+        <div id="index">
+    <ol>
+        <li><a href="1.html">HTML 1</a></li>
+        <li><a href="2.html">HTML 2</a></li>
+        <li><a href="3.html">HTML 3</a></li>
+        <li><a href="4.html">HTML 4</a></li>
+        <li><a href="5.html">HTML 5</a></li>
+        <li><a href="6.html">HTML 6</a></li>
+        <li><a href="css1.html">CSS 1</a></li>
+        <li><a href="css2.html">CSS 2</a></li>
+        <li><a href="css3.html">CSS 3</a></li>
+        <li><a href="css4.html">CSS 4</a></li>
+        <li><a href="css5.html">CSS 5</a></li>
+        <li><a href="js1.html">JS 1</a></li>
+        <li><a href="js2.html">JS 2</a></li>
+        <li><a href="js3.html">JS 3</a></li>
+        <li><a href="js4.html">JS 4</a></li>
+        <li><a href="js5.html">JS 5</a></li>
+        <li><a href="js6.html">JS 5</a></li>
+        <li><a href="js7.html">JS 5</a></li>
+       
+    </ol>
+</div>
+<div id="article">
+<h2>'생활코딩' 학습기록: CSS 4</h2>
+<hr>
+<br>
+<h3>10. 그리드의 기본 사용법</h3>
+<p>
+본문을 분할된 오른쪽에 넣고 싶은데, 하는 여러 방법 중에 아주 최신의 방법인 그리드를 활용해보자
+인류가 되게 오랜 시간 동안 정보들을 잘 배치하는, 레이아웃을 잘 짜는 방법을 
+코드를 통해 효율적으로 하는 것에 대해서 굉장히 어려움을 많이 겪었다
+여러 가지 시행착오 끝에 plux라는 것도 등장하고, 궁극의 방법이라고 할 수 있는 그리드까지 도착했다
+이번 시간에는 아주 최근에 등장한 기술인 그리드를 활용해서 목적을 달성해보겠다
+</p>
+<p>
+그리드가 무엇인지 확인해보자
+기본 파일을 열고, 두 개의 문자를 작성하겠다
+<pre><code>
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    NAVIGATION ARTICLE
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+각각의 문자에 테두리를 보고 그것들을 나란히 배치해볼 것이다
+그러려면 두 개 문자의 정보를 각각의 태그로 묶어주어야 한다
+그런데 우리는 지금 단지 디자인을 하기 위해서, 저것들을 나란히 배치시키기 위해서 태그를 사용하려고 한다
+이런 경우 예를 들어 h1 태그를 쓴다? 이상하다
+h1 태그는 제목이라는 의미가 있다
+디자인이라는 목적을 위해서 어떤 의미도 존재하지 않는 태그를 사용해야할 때가 있다
+그럴 때 사용하라고 존재하는 무색무취와 같은 태그가 바로 div라는 태그이다 division의 약자이다
+아무런 의미도 없고 단지 디자인의 용도로만 쓰는 태그를 감싸주면 보는 것처럼 두 개 문자가 나오게 된다
+div 태그는 기본적으로 블럭 레벨 요소이기 때문에 화면 전체를 쓴다. 그래서 줄바꿈이 된다
+div는 의미론적으로 봤을 때 document에는 아무런 값도 없는 box이다. (box는 나란히 올 수 없다. 위아래로 위치하게 된다. )
+반면, 문서를 보기만 해도 그 의미를 짐작할 수 있는 것을 semantic이라고 한다. 
+(div를 대체할 수 있는 태그 : &lt;header&gt; &lt;/header&gt;, 보통 h1 태그를 감싸는 div를 만들 때 쓰였다. 이처럼
+div와 같은 기능을 가지지만, 읽기만 해도 의미를 짐작할 수 있게 된다. 검색엔진도 이 코드를 이해할 수 있다.)
+(또 &lt;main&gt; &lt;/main&gt; 이라는 태그는 같은 기능이지만, 웹사이트의 메인이라는 뜻이다. - div id=main이라고 해줘도 좋지만, 저렇게 쓰는게 더 깔끔하다
+)(또 &lt;footer&gt; &lt;/footer&gt; 가 있는데, 이는 꼬릿말을 위한 태그이다. 
+)<pre><code>
+    &lt;footer&gt; 
+        &copy: 2020. N.C
+    &lt;/footer&gt;
+</code></pre>
+이걸 다 div로 바꿔줘도 상관없지만, semantic으로 짜주는 게 좋다. 코드만 보고 이게 header구나, 
+하고 파악이 빨라지게 된다. 노력해보자. document와 content를 명확하게 묘사할 수 있도록. 
+</p>
+<p>
+    한편, &lt;p&gt;를 대신해서, 짧은 text를 감싸는 &lt;span&gt; 태그가 있음을 알아두자
+주소를 span에 넣어도 문제는 없다. 그러나 semantic한 'address' 태그에 넣어주면 더 좋을 것이다. 
+</p>
+<p>
+    만일 h1, h2, h3가 뭉탱이로 있으면, hgroup 태그를 사용해주면 된다. 
+    navigation을 위한 nav 태그도 있다. (네비게이션 메뉴를 나타낼 때 사용한다. )
+    website의 일부분들을 묘사하기 위한 section 태그도 있다. (문단이나 1장, 2장, 1절, 2절 등과 같이 
+    이루어지는 글 등을 하나의 그룹 혹은 묶음으로 다루어주는 역할, p 상위로 덮어 그룹지어주는 태그이다.)
+    main 태그에는 포함되지 않는 content를 위한 aside도 있다. (aside 태그 대신에 sidebar 태그를 사용해도 된다. 사이드바에 최근 글 목록이라든지, 인기 글 목록, 즐겨찾기 리스트, 링크 달린 배너 리스트 등이 있을 경우 사용 가능) 
+</p>
+<p>
+    이전에는 div 태그로 떡칠이 되어있었다. semantic 태그들이 없었기 때문에. 
+    그러나 이제 의미가 있는 box가 있는 것이다. 이런 것들을 자주 사용하면 좋다. 
+</p>
+<h4>[노마드] Blocks and Inlines</h4>
+<p>
+    box들은 그 옆에 아무것도 오지 않는다. box를 만들면, 어떤 박스든 
+div, header, main, section, footer, article 등 어떤 박스든. 
+</p>
+<p>
+    반면, span 태그는 바로 옆에 다른 요소들이 올 수 있다. 그러나 box는 옆에 아무것도 올 수 없다. 
+    link 태그도 바로 옆에 다른 요소들이 올 수 있다. 
+</p>
+<p>
+    box 대신에 block으로 부를 것이다(옆에 아무것도 올 수 없다.). block의 반대가 inline이고, 
+    inline은 '같은 줄에 위치할 수 있다(in the same line)'이라는 뜻이다. 
+    이런 형태가 있다는 것을 이해하면, 디자인하는 데 큰 도움을 받을 것이다. (나중에 레이아웃을 다룰 때)
+</p>
+<p>
+    inline은 아주 작은 글이나 링크, 그림 등이 포함된다. code, span, a, image
+    block에는 address, blockquote(긴 글을 짧은 문단으로 글 내부에 인용할 때,)
+    대부분이 block이기 때문에 block이 아닌 종류를 기억하는 게 훨씬 편하다. 
+</p>
+<pre><code>
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;NAVIGATION&lt;/div&gt; 
+    &lt;div&gt;ARTICLE&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+똑같은 목적으로 쓰라고 고안된 태그가 있는데, 
+span이다. 얘는 inline 요소이다. (inline이냐, block이냐를 따져서 쓰면 된다)
+<pre><code>
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;span&gt;NAVIGATION&lt;/span&gt; 
+    &lt;span&gt;ARTICLE&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+우리가 그리드를 알아보기 위해서는, 각각 태그의 부피감을 확실하게 알 필요가 있다
+그래서 이 웹페이지에 있는 모든 div에 border:~~적어준다(부피감이 명확해지게)
+<pre><code>
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;    
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        div {
+            border:5px solid gray;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;span&gt;NAVIGATION&lt;/span&gt; 
+    &lt;span&gt;ARTICLE&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+부피감이 명확해질 것이다
+두 개의 단어 요소를 나란히 놓기 위해서 최신 방법인 그리드를 쓸 것이다
+그걸 위해서는 이 두 개의 태그를 감싸는 부모가 필요하다
+부모 태그를 하나 만들 것이다
+<pre><code>
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;    
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        div {
+            border:5px solid gray;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div&gt;
+     &lt;div&gt;NAVIGATION &lt;div&gt; 
+     &lt;div&gt;ARTICLE &lt;div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+그다음에 부모태그에 id를 부여할 것이다
+<pre><code>
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;    
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        div {
+            border:5px solid gray;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="grid"&gt;
+     &lt;div&gt;NAVIGATION &lt;div&gt; 
+     &lt;div&gt;ARTICLE &lt;div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+'grid'라고 id 값을 정했지만 사실 아무거나 적어도 상관없다
+<pre><code>
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;    
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        #grid {
+            border:5px solid pink;
+            }
+        div {
+            border:5px solid gray;
+            }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="grid"&gt;
+     &lt;div&gt;NAVIGATION &lt;div&gt; 
+     &lt;div&gt;ARTICLE &lt;div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+id값이 그리드인 태그에 대해서, pink를 주겠다. (이러면 이제 구분이 된다.)
+</p>
+<p>
+    내가 두 개의 태그를 나란히 배치하고 싶거나 하면, 그것을 감싸는 부모태그가 필요하다
+    그래서 디자인의 목적만으로 div id="grid" 라는 태그를 만든 것이다. 
+    </p>
+    <p>
+    그러면 이제 준비가 끝났다. display를 활용하자. 
+    display는 블록 수준 요소, inline 또는 none을 통해서 어떤 태그가 표시되는 방법을 완전히 바꾸는 중요한 속성이었다
+    이 display 속성에 grid라고 하는 속성을 쓰면 어떻게 되는가. 아무런 변화가 없다
+    하지만 grid를 쓰고, 그다음에 grid-template : 우리는 두 개의 요소를 하나의 columns에 배치하고 싶다. 
+    그러면 여기서 grid-template-columns:를 선택해서 첫번째 컬러는 150px 정도의 부피를 갖고, 뒤의 column은 나머지 공간에 다 쓴다. 그러면 이렇게 적는다
+    <pre><code>
+        &lt;!doctype html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;    
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style&gt;
+            #grid {
+                border:5px solid pink;
+                display:grid;
+                grid-template-columns: 150px 1fr;
+                }
+            div {
+                border:5px solid gray;
+                }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;div id="grid"&gt;
+         &lt;div&gt;NAVIGATION &lt;div&gt; 
+         &lt;div&gt;ARTICLE &lt;div&gt;
+    &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    </code></pre>
+이 상태에서 내가 창을 크기조절하면 두번째 단어 영역은 창을 키우면 자동으로 커지고, 첫번째 단어 영역은 150px이라는 사이즈를 고정적으로 갖게 된다
+그러면 1fr이 무엇이냐
+<pre><code>
+    &lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;    
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        #grid {
+            border:5px solid pink;
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            }
+        div {
+            border:5px solid gray;
+            }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="grid"&gt;
+     &lt;div&gt;NAVIGATION &lt;div&gt; 
+     &lt;div&gt;ARTICLE &lt;div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+이러면 둘 다 같은 크기가 된다. 
+그리고 앞을 2fr로 하면, 화면 전체를 3fr로 했을 때, 앞은 2만큼, 뒤는 1만큼 화면 전체를 쓰기에 자동으로 조정되는 단위이다
+150px을 사용하고, 뒤를 1fr을 쓰자
+</p>
+<p>
+    그렇게 하고, (grid를 사용하면 좋은 것이) 뒷 상자부분에 아무의미없는 텍스트를 넣어보자. 텍스트가 많아짐에 따라 자동으로 많아지고, 그에 따라 자동으로 왼쪽 상자도 커지게 된다
+    이것이 바로 grid이다 (최신 기술)
+    최신 css 기능을 활용하기 위해서는 지금 현재 사용해도 되는지 아닌지를 데이터에 근거해서 판단할 필요가 있다
+    이 사이트는 여러 css, html, js 중에서 현재 웹브라우저들이 얼마나 그 기술을 채택하고있는가에 대한 통계를 보여주는 것이다
+어떤 곳에 접속한 환경에 따라 지원되는 기술인지 아닌지를 보여준다. 초록색이면 쓸 수 있다. 어디에서는 동작하지 않을 것이다라는 것을 알려준다. 
+<a href="https://caniuse.com/">can i use.com</a>
+</p>
+<h4>block 요소를 inline으로 바꾸거나 혹은 그 반대로 바꾸기</h4>
+<p>
+    <pre><code>
+        span {
+            background-color: turquoise;
+        }
+    </code></pre>
+먼저, 이 span을 block으로 바꿔보겠다. 
+<pre><code>
+    span {
+        display: block;
+        background-color: turquoise;
+    }
+</code></pre>
+기본적으로 span의 display 속성은 inline이다. 이게 default값이다. 
+아무것도 적용하지 않으면, 브라우저는 기본적으로 span을 inline이라고 인식한다. 
+그러나 'block;'을 지정하는 순간, 이제 span 태그의 옆에는 아무것도 올 수 없게 된다. 
+<pre><code>
+    div {
+        height: 150px;
+        width: 150px;
+        background-color: tomato;
+    }
+</code></pre>
+이제 div 태그를 바꿔보자. 
+<pre><code>
+    div {
+        display: inline;
+        height: 150px;
+        width: 150px;
+        background-color: tomato;
+    }
+</code></pre>
+그러나 이렇게 하면 div 자체가 사라진다. 어떤 요소가 inline이라면, 그 요소는 높이와 너비를 가질 수 없게 되기 때문이다. 
+inline은 높이와 너비가 없다. 
+</p>
+<h4>block 요소</h4>
+<p>
+    block이 inline과 다른 점은, 높이와 너비를 가진다는 점 말고도 있다. 
+    box(block)는 엄청난 특징이 3가지 있다. 
+    <ul>
+        <li>margin, padding, border</li>
+    </ul>
+    먼저 style.css에 가서 html에 대한 속성을 줄 것이다. (전체 문서를 가리키게 된다.)
+    
+</p>
+<hr>
+<h3>11. 그리드 써먹기</h3>
+<pre><code>
+    &lt;h3&gt;10. 그리드의 기본 사용법&lt;/h3&gt;
+&lt;p&gt;
+본문을 분할된 오른쪽에 넣고 싶은데, 하는 여러 방법 중에 아주 최신의 방법인 그리드를 활용해보자
+인류가 되게 오랜 시간 동안 정보들을 잘 배치하는, 레이아웃을 잘 짜는 방법을 
+코드를 통해 효율적으로 하는 것에 대해서 굉장히 어려움을 많이 겪었다
+여러 가지 시행착오 끝에 plux라는 것도 등장하고, 궁극의 방법이라고 할 수 있는 그리드까지 도착했다
+이번 시간에는 아주 최근에 등장한 기술인 그리드를 활용해서 목적을 달성해보겠다
+&lt;/p&gt;
+</code></pre>
+이 제목 태그와 본문태그 두 개의 태그가 각자가 너무 독립적이기 때문에 두 개를 묶어줄 필요가 있다
+그렇다고 h1 태그를 쓸 수도, li 태그를 쓸 수도, a 태그를 쓸 수가 없다(왜냐하면 이것들은 의미가 있고 기능이 있기 때문)
+의미도 없고 기능도 없는 것이 필요하다('div')
+<pre><code>
+&it;div&gt;
+    &lt;h3&gt;10. 그리드의 기본 사용법&lt;/h3&gt;
+    &lt;p&gt;
+    본문을 분할된 오른쪽에 넣고 싶은데, 하는 여러 방법 중에 아주 최신의 방법인 그리드를 활용해보자
+    인류가 되게 오랜 시간 동안 정보들을 잘 배치하는, 레이아웃을 잘 짜는 방법을 
+    코드를 통해 효율적으로 하는 것에 대해서 굉장히 어려움을 많이 겪었다
+    여러 가지 시행착오 끝에 plux라는 것도 등장하고, 궁극의 방법이라고 할 수 있는 그리드까지 도착했다
+    이번 시간에는 아주 최근에 등장한 기술인 그리드를 활용해서 목적을 달성해보겠다
+    &lt;/p&gt;
+&it;/div&gt;
+</code></pre>
+그리고 div 태그와 ol태그가 있는데, 이걸 묶어서 grid에 포함되는 요소로 쓰려면, 역시 두 개를 감싸는 공통의 부모태그가 필요핳다
+이것도 div 태그로 하자
+<pre><code>
+&lt;body&gt;
+        &lt;h1&gt;&lt;a href=&quot;index.html&quot;&gt;WEB&lt;/a&gt;&lt;/h1&gt;
+        &it;div&gt;    
+            &lt;ol&gt;
+            &lt;li&gt;&lt;a href=&quot;1.html&quot; class=&quot;saw&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;2.html&quot; class=&quot;saw&quot; id=&quot;active&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;3.html&quot;&gt;JavaScrip&lt;/a&gt;&lt;/li&gt;
+            &lt;/ol&gt;
+            &it;div&gt;
+            &lt;h3&gt;10. 그리드의 기본 사용법&lt;/h3&gt;
+            &lt;p&gt;
+            본문을 분할된 오른쪽에 넣고 싶은데, 하는 여러 방법 중에 아주 최신의 방법인 그리드를 활용해보자
+            인류가 되게 오랜 시간 동안 정보들을 잘 배치하는, 레이아웃을 잘 짜는 방법을 
+            코드를 통해 효율적으로 하는 것에 대해서 굉장히 어려움을 많이 겪었다
+            여러 가지 시행착오 끝에 plux라는 것도 등장하고, 궁극의 방법이라고 할 수 있는 그리드까지 도착했다
+            이번 시간에는 아주 최근에 등장한 기술인 그리드를 활용해서 목적을 달성해보겠다
+            &lt;/p&gt;
+            &it;/div&gt;
+        &it;/div&gt;
+    </code></pre>
+    바깥쪽에 있는 div 태그를 그리드로 지정하기 위해서 id값으로 'grid'라고 지정할 것이다
+    그리고 순서는 다음과 같다.
+    <ol>
+        <li>id가 grid인 태그에 대해 display를 grid로 지정</li>
+        <li>columns(열)에다가 첫번째 열은 순서로 봤을 때 ol이다. 그러면 ol은 150px로 하고, div가 두번째 열인데, 이는 1fr로 한다</li>
+    </ol>
+    &lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;    
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        #grid {
+            display:grid;
+            grid-template-columns: 180px 1fr;
+            }
+        div {
+            border:5px solid gray;
+            }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="grid"&gt;
+     &lt;div&gt;NAVIGATION &lt;div&gt; 
+     &lt;div&gt;ARTICLE &lt;div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+이제 검사해보자. 목차 블록의 패딩 값이 20px이다. 더블클릭하면 움직일 수 있다. 적당한 지점을 찾는다. 32px 정도 놓겠따. 그런 뒤 ol 태그에 대해서 padding-left:33px;한다
+</p>
+    만약 본문을 조절하고 싶다면, 본문의 div 태그에 &it;div id = &quot;article&quot;&gt;을 적는다
+<pre><code>
+    #grid {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        }
+    #article {
+        padding:25px;
+    }
+</code></pre>
+<p>
+    이제 메인 style 속성에서 불필요한 값을 지워보자.
+    이를테면 ol 태그에 대한 width, margin 값은 불필요할 것 같다. (왜냐하면 목차 이외에 본문 내에서도 ol을 활용할 수 있기 때문)
+그러면 (div id="grid") id 값이 grid인 태그 밑에 있는 ol 태그라고 하면 훨씬 의미가 분명해질 것이다라는
+<pre><code>
+    #grid ol {
+        padding:25px;
+    }
+</code></pre>
+이렇게 해주면 웹페이지에 있는 ol 중에 그 부모가 grid인 태그를 선택하는 선택자가 된다
+<pre><code>
+#grid #article {
+    padding-left:25px;
+}
+</code></pre>
+id 값을 썼으면 이렇게 해줄 필요는 없지만 의미를 분명히 하기 위해서 이렇게 하는 것도 나쁜 방법은 아니다
+</p>
+</div>
+</div>
+</body>
+</html>

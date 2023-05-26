@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+html {
+    background-color: #fafafa;
+}
+a {
+    text-decoration: none;
+    color:#3a444c;
+}
+nav {
+    color:#3a444c;
+    text-align: center;
+    background-color:rgb(112, 109, 121);
+    color:#c2daec;
+}
+ h1 {
+    text-align: center;
+    font-size: 45px;
+    text-decoration: underline;
+    border-bottom: 2px solid gray;
+    margin:0;
+    padding:80px;
+    background-image: url('img/tulips.jpg'); background-size: contain; width:100%;
+    background-repeat: no-repeat; 
+    font-family: 'SUITE-Regular';
+    }
+h2 {
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    padding: 40px;
+    border-bottom: 2px solid gray;
+}
+code {
+    background: rgb(52, 43, 78); color:#c2daec; width: 600px;
+    padding:10px; font-size: 14px; 
+    font-family: 'SUITE-Regular';
+    display: block;  
+    white-space: pre;
+   margin: 1em;
+    }
+#music {
+    display: grid;
+    margin:0;
+}
+#index ol {
+    width:100px;
+    height: 100%;
+    margin:0;
+    padding:17px;
+    background-color:rgb(202, 198, 211);
+    color:#3a444c;
+}
+#grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    font-family: 'SUITE-Regular';
+    line-height: 1.5;
+    }
+#grid ol{
+    padding-left:33px;
+   }
+#article {
+    display: grid;
+       border-left:1px solid gray;
+    padding-left:25px;
+}
+#home, #html, #css, #js, #java{
+    border-right:1px solid gray;
+    padding-right:25px;
+    padding-left:25px;
+}
